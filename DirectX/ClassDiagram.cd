@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="DirectX">
+    <Position X="8.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JIEAACAAAACABhAAAUBAAAAAAACAAAwAABQAAAAAAAA=</HashCode>
+      <FileName>DirectX.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Form">
+    <Position X="16.5" Y="14" Width="1.5" />
+    <InheritanceLine Type="Renderable" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="11.247" />
+        <Point X="11.5" Y="13.396" />
+        <Point X="16.667" Y="13.396" Type="JumpStart" />
+        <Point X="16.833" Y="13.396" Type="JumpEnd" />
+        <Point X="17.25" Y="13.396" />
+        <Point X="17.25" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="KeyboardEvent" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="15" Y="11.18" />
+        <Point X="15" Y="12.658" />
+        <Point X="16.75" Y="12.658" />
+        <Point X="16.75" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="MouseEvent" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="11.123" />
+        <Point X="13.25" Y="12.145" />
+        <Point X="14.917" Y="12.145" Type="JumpStart" />
+        <Point X="15.083" Y="12.145" Type="JumpEnd" />
+        <Point X="17.688" Y="12.145" />
+        <Point X="17.688" Y="14" />
+      </Path>
+      <InheritanceModifierLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.17" Y="0.06" Height="0.182" Width="0.535" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgIQAIBARAAAAEAAAAAEQEBAGhqAAgABIQAIAEUDEAI=</HashCode>
+      <FileName>Form.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Renderable">
+    <Position X="10.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAABAAAQAgAAAAAAAAAAAAAIAAAAhAAAIQIABcAA=</HashCode>
+      <FileName>Renderable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventSystem">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkQAIAAAAAAAARAAAKgAAAAAABAAAAAAZBIAAQACACA=</HashCode>
+      <FileName>EventSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MouseEvent">
+    <Position X="12.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAAAAAAAAAAAAAAAAAAAABAAAAAAIAAAAAACAAA=</HashCode>
+      <FileName>MouseEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyboardEvent">
+    <Position X="14.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAA=</HashCode>
+      <FileName>KeyboardEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MouseEventHandler">
+    <Position X="14.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAABAAAAQAQAAgAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>MouseEventHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyEventHandler">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAgAAgIAEAAAADAAAAAAAAAAA=</HashCode>
+      <FileName>KeyEventHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TabControl">
+    <Position X="18.25" Y="14" Width="1.5" />
+    <InheritanceLine Type="MouseEvent" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="11.123" />
+        <Point X="13.25" Y="12.159" />
+        <Point X="14.917" Y="12.159" Type="JumpStart" />
+        <Point X="15.083" Y="12.159" Type="JumpEnd" />
+        <Point X="19.438" Y="12.159" />
+        <Point X="19.438" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Renderable" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="11.247" />
+        <Point X="11.5" Y="13.396" />
+        <Point X="16.667" Y="13.396" Type="JumpStart" />
+        <Point X="16.833" Y="13.396" Type="JumpEnd" />
+        <Point X="17.604" Y="13.396" Type="JumpStart" />
+        <Point X="17.771" Y="13.396" Type="JumpEnd" />
+        <Point X="19" Y="13.396" />
+        <Point X="19" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAAABAEAAAAAQAQACRIAAEABIAAKAAQDAAI=</HashCode>
+      <FileName>TabControl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tab">
+    <Position X="20" Y="14" Width="1.5" />
+    <InheritanceLine Type="Renderable" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="11.247" />
+        <Point X="11.5" Y="13.396" />
+        <Point X="16.667" Y="13.396" Type="JumpStart" />
+        <Point X="16.833" Y="13.396" Type="JumpEnd" />
+        <Point X="17.604" Y="13.396" Type="JumpStart" />
+        <Point X="17.771" Y="13.396" Type="JumpEnd" />
+        <Point X="19.354" Y="13.396" Type="JumpStart" />
+        <Point X="19.521" Y="13.396" Type="JumpEnd" />
+        <Point X="20.75" Y="13.396" />
+        <Point X="20.75" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAABAACAgAAAAAAAEQAAABAIAAAABAAAIAAABCAA=</HashCode>
+      <FileName>Tab.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Vertex">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAgAAAYAE=</HashCode>
+      <FileName>DirectX.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="DWORD" Collapsed="true">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypes.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="MouseButton">
+    <Position X="1.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAgAAAAAAAAAAAAAAAACAEAAAAAAAAAAAA=</HashCode>
+      <FileName>EventSystem.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

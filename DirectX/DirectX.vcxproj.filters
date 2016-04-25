@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\DirectX">
+      <UniqueIdentifier>{c04dd1a6-20b4-4a18-8c14-07a6c4239d11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{1c0ac02a-f51e-49e5-a411-6dab5fed3297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Form">
+      <UniqueIdentifier>{c3798562-5aed-4bfb-a2fa-895276fd5216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Renderable">
+      <UniqueIdentifier>{28aabb1d-3c19-45dd-9224-24f0e3857e0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem">
+      <UniqueIdentifier>{e26ad91e-5c21-44bd-a7ca-2c861377d07d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem\Events">
+      <UniqueIdentifier>{b0e60554-7ecb-4339-9733-e797265f027c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem\Events\MouseEvent">
+      <UniqueIdentifier>{c6cff6a5-57da-4376-942d-437cec82c4a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem\Events\KeyboardEvent">
+      <UniqueIdentifier>{560bc1a8-b8b5-44f8-9cb9-f404b7ff6fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem\Handler">
+      <UniqueIdentifier>{fa085344-bf55-4363-a24a-7f9224f4f973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem\Handler\KeyEventHandler">
+      <UniqueIdentifier>{15661165-e1ab-4689-9a7d-4c71b8d21de1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventSystem\Handler\MouseEventHandler">
+      <UniqueIdentifier>{da0f68d1-5d5a-40ee-98d0-5687d9338f0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components">
+      <UniqueIdentifier>{fd65a1ac-159f-4e6e-8a31-8ea49176dd08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\Button">
+      <UniqueIdentifier>{7f5787dd-96dc-4482-ac43-b62afb8f1bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\Checkbox">
+      <UniqueIdentifier>{8cff7d67-824a-4ab0-becf-385b0ab1ee34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\Slider">
+      <UniqueIdentifier>{ca504832-e439-49e3-b10a-3c0464fc5825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\Label">
+      <UniqueIdentifier>{46a1cc67-52a7-4722-a882-dca223c49344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\Groupbox">
+      <UniqueIdentifier>{cb1016d5-d58b-43f4-9aff-74ee8153aaa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\TabControl">
+      <UniqueIdentifier>{9c810903-2497-40fc-899b-627b7b4fa2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\TabControl\Tab">
+      <UniqueIdentifier>{7fd4f025-d37f-40d7-9ed5-9967424b2825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\RadioControl">
+      <UniqueIdentifier>{b96b1ab3-14e7-4c00-bcca-a30b8cccd3e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu\Components\RadioControl\RadioButton">
+      <UniqueIdentifier>{cbb1f2f6-10e5-4d69-a89f-c3931106154b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectX.h">
+      <Filter>Header Files\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Form.h">
+      <Filter>Header Files\Menu\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderable.h">
+      <Filter>Header Files\Menu\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>Header Files\EventSystem\Events\MouseEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardEvent.h">
+      <Filter>Header Files\EventSystem\Events\KeyboardEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSystem.h">
+      <Filter>Header Files\EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEventHandler.h">
+      <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEventHandler.h">
+      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="TabControl.h">
+      <Filter>Header Files\Menu\Components\TabControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Tab.h">
+      <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
+    </ClInclude>
+    <ClInclude Include="Checkbox.h">
+      <Filter>Header Files\Menu\Components\Checkbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Groupbox.h">
+      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX.cpp">
+      <Filter>Header Files\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Form.cpp">
+      <Filter>Header Files\Menu\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderable.cpp">
+      <Filter>Header Files\Menu\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseEvent.cpp">
+      <Filter>Header Files\EventSystem\Events\MouseEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardEvent.cpp">
+      <Filter>Header Files\EventSystem\Events\KeyboardEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="EventSystem.cpp">
+      <Filter>Header Files\EventSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyEventHandler.cpp">
+      <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseEventHandler.cpp">
+      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="TabControl.cpp">
+      <Filter>Header Files\Menu\Components\TabControl</Filter>
+    </ClCompile>
+    <ClCompile Include="Tab.cpp">
+      <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
+    </ClCompile>
+    <ClCompile Include="Checkbox.cpp">
+      <Filter>Header Files\Menu\Components\Checkbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Groupbox.cpp">
+      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>
