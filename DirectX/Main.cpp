@@ -45,8 +45,26 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 
 	App->InitializeDirectX( &Window );
 	
-	Form Menu = Form( 350, 200, 700, 450, D3DCOLOR_ARGB( 255, 33, 35, 48 ), "inVincibleDirectX", 30.f, D3DCOLOR_ARGB( 255, 255, 255, 255 ), D3DCOLOR_ARGB( 255, 81, 50, 169 ) );
+	Form Menu = Form( 350, 200, 700, 450, D3DCOLOR_ARGB( 255, 25, 33, 35 ), "inVincible", 30.f, D3DCOLOR_ARGB( 255, 35, 43, 45 ), D3DCOLOR_ARGB( 255, 229, 101, 38 ) );
 	App->AddRenderObject( &Menu );
+
+	TabControl TabCtrl = TabControl( &Menu, 150.f, D3DCOLOR_ARGB( 255, 35, 43, 45 ) );
+	Menu.AddChildObject( &TabCtrl );
+
+	Tab Tab1 = Tab( &TabCtrl, "LOL" );
+	TabCtrl.AddTab( &Tab1 );
+
+	Tab Tab2 = Tab( &TabCtrl, "ROFL" );
+	TabCtrl.AddTab( &Tab2 );
+
+	Tab Tab3 = Tab( &TabCtrl, "XD" );
+	TabCtrl.AddTab( &Tab3 );
+
+	Tab Tab4 = Tab( &TabCtrl, "LMAO" );
+	TabCtrl.AddTab( &Tab4 );
+
+	Tab Tab5 = Tab( &TabCtrl, "HUEHUEHUE" );
+	TabCtrl.AddTab( &Tab5 );
 
 	auto MessageQueue = MSG( );
 
