@@ -12,7 +12,6 @@ class Form : public Renderable, protected KeyboardEvent, protected MouseEvent
 
 	D3DCOLOR BackgroundColor;
 
-
 	char* Title;
 
 	bool DisplayTitle;
@@ -21,13 +20,13 @@ class Form : public Renderable, protected KeyboardEvent, protected MouseEvent
 
 	D3DCOLOR TitleColor;
 	D3DCOLOR TitleBarColor;
-
+	
 
 	bool IsBeingDragged;
 
 	POINT ClickedDeltaPosition;
 
-	
+		
 	std::vector<Renderable*> Childrens;
 
 
@@ -59,18 +58,24 @@ public:
 
 
 	float GetWidth( ) const;
+
 	float GetHeight( ) const;
+
 
 	D3DCOLOR GetBackgroundColor( ) const;
 
 
 	char* GetTitle( ) const;
 
+
 	bool GetDisplayTitle( ) const;
+
 
 	float GetTitleBarHeight( ) const;
 
+
 	D3DCOLOR GetTitleColor( ) const;
+
 	D3DCOLOR GetTitleBarColor( ) const;
 
 
@@ -78,9 +83,12 @@ public:
 	
 
 	float GetBoundsXStart( ) override;
+
 	float GetBoundsYStart( ) override;
 
+
 	float GetBoundsXEnd( ) override;
+
 	float GetBoundsYEnd( ) override;
 
 

@@ -24,19 +24,28 @@ class EventSystem
 	EventSystem( );
 
 public:
+
 	void AddOnMouseDownEvent( std::function<bool( POINT, MouseButton )> Event );
+
 	void AddOnMouseUpEvent( std::function<bool( POINT, MouseButton )> Event );
+
 	void AddOnMouseMoveEvent( std::function<bool( POINT, MouseButton )> Event );
 
+
 	void AddOnKeyPressEvent( std::function<bool( DWORD )> Event );
+
 	void AddOnKeyReleaseEvent( std::function<bool( DWORD )> Event );
 
 
 	void DispatchMouseDownEvents( POINT MousePosition, MouseButton MouseButton );
+
 	void DispatchMouseUpEvents( POINT MousePosition, MouseButton MouseButton );
+
 	void DispatchMouseMoveEvents( POINT MousePosition, MouseButton MouseButton );
 
+
 	void DispatchKeyPressEvents( DWORD Keycode );
+
 	void DispatchKeyReleaseEvents( DWORD Keycode );
 
 

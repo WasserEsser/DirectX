@@ -129,11 +129,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Checkbox.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="EventSystem.h" />
     <ClInclude Include="Form.h" />
-    <ClInclude Include="Groupbox.h" />
     <ClInclude Include="KeyboardEvent.h" />
     <ClInclude Include="KeyEventHandler.h" />
     <ClInclude Include="MouseEvent.h" />
@@ -144,11 +142,9 @@
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Checkbox.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="EventSystem.cpp" />
     <ClCompile Include="Form.cpp" />
-    <ClCompile Include="Groupbox.cpp" />
     <ClCompile Include="KeyboardEvent.cpp" />
     <ClCompile Include="KeyEventHandler.cpp" />
     <ClCompile Include="Main.cpp" />

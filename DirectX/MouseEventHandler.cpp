@@ -1,4 +1,5 @@
 ﻿#include "MouseEventHandler.h"
+#include "EventSystem.h"
 
 LRESULT MouseEventHandler::MouseHookCallback( int nCode, WPARAM wParam, LPARAM lParam )
 {

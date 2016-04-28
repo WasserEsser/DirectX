@@ -1,4 +1,5 @@
 ﻿#include "KeyEventHandler.h"
+#include "EventSystem.h"
 
 LRESULT KeyEventHandler::KeyboardHookCallback( int nCode, WPARAM wParam, LPARAM lParam )
 {

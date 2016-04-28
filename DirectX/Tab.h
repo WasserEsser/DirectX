@@ -24,10 +24,14 @@ public:
 
 
 	float GetBoundsXStart( ) override;
+
 	float GetBoundsYStart( ) override;
 
+
 	float GetBoundsXEnd( ) override;
+
 	float GetBoundsYEnd( ) override;
+
 
 	char* GetTabName( );
 

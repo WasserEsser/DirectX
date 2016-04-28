@@ -1,8 +1,8 @@
 ﻿#include "DirectX.h"
-#include "Form.h"
 
-DirectX::DirectX( ) : Interface( nullptr ), Device( nullptr ), Verdana( nullptr ), Asenine( nullptr ), Vegur( nullptr ), Neou( nullptr ), RenderList( 0 )
+DirectX::DirectX( ) : Interface( nullptr ), Device( nullptr ), Verdana( nullptr ), RenderList( 0 )
 {
+
 }
 
 DirectX* DirectX::GetSingleton( )
@@ -22,38 +22,18 @@ ID3DXFont* DirectX::GetVerdana( )
 	return Verdana;
 }
 
-ID3DXFont* DirectX::GetAsenine( )
-{
-	return Asenine;
-}
-
-ID3DXFont* DirectX::GetVegur( )
-{
-	return Vegur;
-}
-
-ID3DXFont* DirectX::GetNeou( )
-{
-	return Neou;
-}
-
 DirectX::~DirectX( )
 {
 	if ( Interface != nullptr ) Interface->Release( );
 	if ( Device != nullptr ) Device->Release( );
 	if ( Verdana != nullptr ) Verdana->Release( );
-	if ( Asenine != nullptr ) Asenine->Release( );
-	if ( Vegur != nullptr ) Vegur->Release( );
-	if ( Neou != nullptr ) Neou->Release( );
 }
 
 void DirectX::InitializeDirectX( HWND* Window )
 {
 	Interface = Direct3DCreate9( D3D_SDK_VERSION );
-
 	
-	D3DPRESENT_PARAMETERS PresentParameters;
-	memset( &PresentParameters, 0, sizeof( D3DPRESENT_PARAMETERS ) );
+	D3DPRESENT_PARAMETERS PresentParameters{ 0 };
 
 	PresentParameters.BackBufferFormat = D3DFMT_A8R8G8B8;
 	PresentParameters.BackBufferWidth = GetSystemMetrics( SM_CXSCREEN );
@@ -68,9 +48,6 @@ void DirectX::InitializeDirectX( HWND* Window )
 	if ( FAILED( Interface->CreateDevice( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, *Window, D3DCREATE_HARDWARE_VERTEXPROCESSING, &PresentParameters, &Device ) ) ) MessageBox( nullptr, "Failed to create Direct3D device", "inVincible", MB_OK );
 
 	D3DXCreateFont( Device, 15, 0, 0, 0, false, DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, "Verdana", &Verdana );
-	D3DXCreateFont( Device, 20, 0, 0, 0, false, DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, "Vegur", &Vegur );
-	D3DXCreateFont( Device, 30, 0, 0, 0, false, DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, "Asenine", &Asenine );
-	D3DXCreateFont( Device, 20, 0, 0, 0, false, DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, "Neou", &Neou );
 }
 
 void DirectX::RenderFrame( ) const

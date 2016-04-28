@@ -3,16 +3,17 @@
 
 Tab::Tab( ) : Parent( nullptr ), TabName( nullptr )
 {
+
 }
 
 Tab::Tab( TabControl* Parent, char* TabName ) : Parent( Parent ), TabName( TabName )
 {
 	Vertex Vertecies[ 4 ]
 	{
-		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) },
-		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) },
-		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) },
-		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) }
+		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) },
+		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) },
+		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) },
+		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) }
 	};
 
 	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 4 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
@@ -63,10 +64,10 @@ void Tab::UpdateVertecies( )
 {
 	Vertex Vertecies[ 4 ]
 	{
-		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) },
-		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) },
-		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) },
-		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetSelectedTabColor( ) }
+		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) },
+		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYStart( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) },
+		{ Parent->GetBoundsXStart( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) },
+		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) }
 	};
 
 	void* VertexPointer;

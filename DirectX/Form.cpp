@@ -467,14 +467,9 @@ bool Form::OnMouseMove( POINT MousePosition, MouseButton MouseButton )
 
 bool Form::OnKeyPress( DWORD Keycode )
 {
-	if ( Keycode == VK_ESCAPE && Active )
+	if ( Keycode == VK_F7 )
 	{
-		Active = false;
-		return true;
-	}
-	if ( Keycode == VK_INSERT && !Active )
-	{
-		Active = true;
+		Active = !Active;
 		return true;
 	}
 

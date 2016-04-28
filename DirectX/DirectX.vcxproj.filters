@@ -43,9 +43,6 @@
     <Filter Include="Header Files\EventSystem\Handler\KeyEventHandler">
       <UniqueIdentifier>{15661165-e1ab-4689-9a7d-4c71b8d21de1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\EventSystem\Handler\MouseEventHandler">
-      <UniqueIdentifier>{da0f68d1-5d5a-40ee-98d0-5687d9338f0d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Menu\Components">
       <UniqueIdentifier>{fd65a1ac-159f-4e6e-8a31-8ea49176dd08}</UniqueIdentifier>
     </Filter>
@@ -76,6 +73,9 @@
     <Filter Include="Header Files\Menu\Components\RadioControl\RadioButton">
       <UniqueIdentifier>{cbb1f2f6-10e5-4d69-a89f-c3931106154b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\EventSystem\Handler\KeyEventHandler\MouseEventHandler">
+      <UniqueIdentifier>{da0f68d1-5d5a-40ee-98d0-5687d9338f0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX.h">
@@ -103,19 +103,13 @@
       <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="MouseEventHandler.h">
-      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
+      <Filter>Header Files\EventSystem\Handler\KeyEventHandler\MouseEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="TabControl.h">
       <Filter>Header Files\Menu\Components\TabControl</Filter>
     </ClInclude>
     <ClInclude Include="Tab.h">
       <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
-    </ClInclude>
-    <ClInclude Include="Checkbox.h">
-      <Filter>Header Files\Menu\Components\Checkbox</Filter>
-    </ClInclude>
-    <ClInclude Include="Groupbox.h">
-      <Filter>Header Files\Menu\Components\Groupbox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -144,19 +138,13 @@
       <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="MouseEventHandler.cpp">
-      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
+      <Filter>Header Files\EventSystem\Handler\KeyEventHandler\MouseEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="TabControl.cpp">
       <Filter>Header Files\Menu\Components\TabControl</Filter>
     </ClCompile>
     <ClCompile Include="Tab.cpp">
       <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
-    </ClCompile>
-    <ClCompile Include="Checkbox.cpp">
-      <Filter>Header Files\Menu\Components\Checkbox</Filter>
-    </ClCompile>
-    <ClCompile Include="Groupbox.cpp">
-      <Filter>Header Files\Menu\Components\Groupbox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

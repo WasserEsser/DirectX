@@ -12,20 +12,21 @@ class TabControl : public Renderable, protected MouseEvent
 	float TabControlWidth;
 
 	D3DCOLOR BackgroundColor;
+	D3DCOLOR TabBackgroundColor;
 	D3DCOLOR SelectedTabColor;
-		
+	D3DCOLOR TextColor;
 
-	std::vector<Tab*> Tabs;
-
-	
 	BYTE ActiveTab;
 
+
+	std::vector<Tab*> Tabs;
+	
 
 	TabControl( );
 
 public:
 	
-	TabControl( Form* Parent, float TabControlWidth, D3DCOLOR SelectedTabColor );
+	TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgroundColor, D3DCOLOR SelectedTabColor, D3DCOLOR TextColor );
 
 
 	~TabControl( );
@@ -36,20 +37,32 @@ public:
 
 	Form* GetParent( );
 
+
 	float GetTabControlWidth( );
+
 	float GetTabControlHeight( );
+
 	
 	float GetBoundsXStart( ) override;
+
 	float GetBoundsYStart( ) override;
 
-	float GetBoundsXEnd( ) override;
-	float GetBoundsYEnd( ) override;
 
-	D3DCOLOR GetBackgroundColor( );
-	D3DCOLOR GetSelectedTabColor( );
+	float GetBoundsXEnd( ) override;
+
+	float GetBoundsYEnd( ) override;
 
 
 	BYTE GetActiveTab( );
+
+
+	D3DCOLOR GetBackgroundColor( );
+
+	D3DCOLOR GetTabBackgroundColor( );
+
+	D3DCOLOR GetSelectedTabColor( );
+
+	D3DCOLOR GetTextColor( );
 
 	
 	void RenderObject( ) override;
@@ -58,6 +71,8 @@ public:
 
 
 	bool OnMouseDown( POINT MousePosition, MouseButton Button ) override;
+
 	bool OnMouseUp( POINT, MouseButton ) override;
+
 	bool OnMouseMove( POINT, MouseButton ) override;
 };

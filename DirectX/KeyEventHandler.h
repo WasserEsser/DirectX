@@ -1,17 +1,18 @@
 ﻿#pragma once
 #include <Windows.h>
-#include "EventSystem.h"
 
 class KeyEventHandler
 {
 	HHOOK HookObject;
 
+
 	static LRESULT CALLBACK KeyboardHookCallback( int nCode, WPARAM wParam, LPARAM lParam );
 	
+
 	KeyEventHandler( );
 
-public:
-	
+public:	
+
 	~KeyEventHandler( );
 
 

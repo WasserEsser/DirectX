@@ -1,6 +1,6 @@
 ﻿#include "Renderable.h"
 
-Renderable::Renderable( ) : VertexBuffer( ), Active( false )
+Renderable::Renderable( ) : VertexBuffer( ), X( 0.f ), Y( 0.f ), Active( false )
 {
 	
 }

@@ -4,10 +4,6 @@
 #include "KeyEventHandler.h"
 #include "MouseEventHandler.h"
 #include "TabControl.h"
-#include "Groupbox.h"
-#include "Checkbox.h"
-
-bool a = false;
 
 LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 {
@@ -22,7 +18,7 @@ LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 
 int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdLine, int iCmdShow )
 {
-	auto WindowClass = WNDCLASSEX( );
+	WNDCLASSEX WindowClass;
 	memset( &WindowClass, 0, sizeof( WNDCLASSEX ) );
 
 	WindowClass.cbSize = sizeof( WNDCLASSEX );
@@ -41,14 +37,14 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 	UpdateWindow( Window );
 	ShowWindow( Window, SW_SHOW );
 
-	auto App = DirectX::GetSingleton( );
+	DirectX* App = DirectX::GetSingleton( );
 
 	App->InitializeDirectX( &Window );
 	
-	Form Menu = Form( 350, 200, 700, 450, D3DCOLOR_ARGB( 255, 25, 33, 35 ), "inVincible", 30.f, D3DCOLOR_ARGB( 255, 35, 43, 45 ), D3DCOLOR_ARGB( 255, 229, 101, 38 ) );
+	Form Menu = Form( 350, 200, 700, 450, D3DCOLOR_ARGB( 255, 25, 33, 35 ), "inVincible", 30.f, D3DCOLOR_ARGB( 255, 33, 41, 43 ), D3DCOLOR_ARGB( 255, 229, 101, 38 ) );
 	App->AddRenderObject( &Menu );
 
-	TabControl TabCtrl = TabControl( &Menu, 150.f, D3DCOLOR_ARGB( 255, 35, 43, 45 ) );
+	TabControl TabCtrl = TabControl( &Menu, 150.f, D3DCOLOR_ARGB( 255, 33, 41, 43 ),D3DCOLOR_ARGB( 255, 33, 41, 43 ), 0xFFFFFFFF );
 	Menu.AddChildObject( &TabCtrl );
 
 	Tab Tab1 = Tab( &TabCtrl, "LOL" );
@@ -66,7 +62,7 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 	Tab Tab5 = Tab( &TabCtrl, "HUEHUEHUE" );
 	TabCtrl.AddTab( &Tab5 );
 
-	auto MessageQueue = MSG( );
+	MSG MessageQueue;
 
 	KeyEventHandler::GetSingleton( )->Hook( );
 	MouseEventHandler::GetSingleton( )->Hook( );

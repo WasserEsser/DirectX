@@ -19,9 +19,6 @@ class DirectX
 	IDirect3D9* Interface;
 	IDirect3DDevice9* Device;
 	ID3DXFont* Verdana;
-	ID3DXFont* Vegur;
-	ID3DXFont* Asenine;
-	ID3DXFont* Neou;
 	
 	std::vector<Renderable*> RenderList;
 
@@ -40,12 +37,6 @@ public:
 
 
 	ID3DXFont* GetVerdana( );
-
-	ID3DXFont* GetAsenine( );
-
-	ID3DXFont* GetVegur( );
-
-	ID3DXFont* GetNeou( );
 
 
 	void InitializeDirectX( HWND* Window );
