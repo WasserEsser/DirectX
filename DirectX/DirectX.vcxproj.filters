@@ -111,6 +111,9 @@
     <ClInclude Include="Tab.h">
       <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
     </ClInclude>
+    <ClInclude Include="Groupbox.h">
+      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

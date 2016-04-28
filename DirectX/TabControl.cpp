@@ -1,11 +1,11 @@
 ﻿#include "TabControl.h"
 
-TabControl::TabControl( ) : Parent( nullptr ), TabControlWidth( 0.f ), BackgroundColor( 0 ), TabBackgroundColor( 0 ), SelectedTabColor( 0 ), TextColor( 0 ), ActiveTab( 0 ), Tabs( )
+TabControl::TabControl( ) : Renderable( ), MouseEvent( ), Parent( nullptr ), TabControlWidth( 0.f ), BackgroundColor( 0 ), TabBackgroundColor( 0 ), SelectedTabColor( 0 ), TextColor( 0 ), ActiveTab( 0 ), Tabs( )
 {
 
 }
 
-TabControl::TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgroundColor, D3DCOLOR SelectedTabColor, D3DCOLOR TextColor ) : Parent( Parent ), TabControlWidth( TabControlWidth ), BackgroundColor( this->Parent->GetBackgroundColor( ) ), TabBackgroundColor( TabBackgroundColor ), SelectedTabColor( SelectedTabColor ), TextColor( TextColor ), ActiveTab( 3 ), Tabs( )
+TabControl::TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgroundColor, D3DCOLOR SelectedTabColor, D3DCOLOR TextColor ) : Renderable( ), MouseEvent( ), Parent( Parent ), TabControlWidth( TabControlWidth ), BackgroundColor( this->Parent->GetBackgroundColor( ) ), TabBackgroundColor( TabBackgroundColor ), SelectedTabColor( SelectedTabColor ), TextColor( TextColor ), ActiveTab( 3 ), Tabs( )
 {
 	X = this->Parent->GetBoundsXStart( );
 	Y = this->Parent->GetBoundsYStart( );
@@ -37,6 +37,7 @@ TabControl::TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgro
 
 TabControl::~TabControl( )
 {
+
 }
 
 void TabControl::AddTab( Tab* Object )

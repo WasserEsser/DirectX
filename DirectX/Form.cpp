@@ -1,12 +1,12 @@
 ﻿#include "Form.h"
 
 Form::Form( )
-	: Width( 0.f ), Height( 0.f ), BackgroundColor( 0x0 ), Title( nullptr ), DisplayTitle( false ), TitleBarHeight( 0.f ), TitleColor( 0x0 ), TitleBarColor( 0x0 ), IsBeingDragged( false )
+	: Renderable( ), KeyboardEvent( ), MouseEvent( ), Width( 0.f ), Height( 0.f ), BackgroundColor( 0x0 ), Title( nullptr ), DisplayTitle( false ), TitleBarHeight( 0.f ), TitleColor( 0x0 ), TitleBarColor( 0x0 ), IsBeingDragged( false )
 {
 }
 
 Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColor ) 
-	: Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( nullptr ), DisplayTitle( false ), TitleBarHeight( 0.f ), TitleColor( 0x0 ), TitleBarColor( 0xFFFFFFFF ), IsBeingDragged( false )
+	: Renderable( ), KeyboardEvent( ), MouseEvent( ), Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( nullptr ), DisplayTitle( false ), TitleBarHeight( 0.f ), TitleColor( 0x0 ), TitleBarColor( 0xFFFFFFFF ), IsBeingDragged( false )
 {
 	this->X = X;
 	this->Y = Y;
@@ -39,7 +39,7 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 }
 
 Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColor, char* Title, D3DCOLOR TitleColor )
-	:  Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( true ), TitleBarHeight( 25.f ), TitleColor( TitleColor ), TitleBarColor( BackgroundColor ), IsBeingDragged( false )
+	: Renderable( ), KeyboardEvent( ), MouseEvent( ), Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( true ), TitleBarHeight( 25.f ), TitleColor( TitleColor ), TitleBarColor( BackgroundColor ), IsBeingDragged( false )
 {
 	this->X = X;
 	this->Y = Y;
@@ -74,7 +74,7 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 }
 
 Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColor, char* Title, D3DCOLOR TitleColor, D3DCOLOR TitleBarColor )
-	: Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( true ), TitleBarHeight( 25.f ), TitleColor( TitleColor ), TitleBarColor( TitleBarColor ), IsBeingDragged( false )
+	: Renderable( ), KeyboardEvent( ), MouseEvent( ), Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( true ), TitleBarHeight( 25.f ), TitleColor( TitleColor ), TitleBarColor( TitleBarColor ), IsBeingDragged( false )
 {
 	this->X = X;
 	this->Y = Y;
@@ -111,7 +111,7 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 }
 
 Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColor, char* Title, float TitleBarHeight, D3DCOLOR TitleColor )
-	: Width(  Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( 1 ), TitleBarHeight( TitleBarHeight ), TitleColor( TitleColor ), TitleBarColor(  ), IsBeingDragged( false )
+	: Renderable( ), KeyboardEvent( ), MouseEvent( ), Width(  Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( 1 ), TitleBarHeight( TitleBarHeight ), TitleColor( TitleColor ), TitleBarColor(  ), IsBeingDragged( false )
 {
 	this->X = X;
 	this->Y = Y;
@@ -146,7 +146,7 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 }
 
 Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColor, char* Title, float TitleBarHeight, D3DCOLOR TitleColor, D3DCOLOR TitleBarColor )
-	: Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( 1 ), TitleBarHeight( TitleBarHeight ), TitleColor( TitleColor ), TitleBarColor( TitleBarColor ), IsBeingDragged( false )
+	: Renderable( ), KeyboardEvent( ), MouseEvent( ), Width( Width ), Height( Height ), BackgroundColor( BackgroundColor ), Title( Title ), DisplayTitle( 1 ), TitleBarHeight( TitleBarHeight ), TitleColor( TitleColor ), TitleBarColor( TitleBarColor ), IsBeingDragged( false )
 {
 	this->X = X;
 	this->Y = Y;

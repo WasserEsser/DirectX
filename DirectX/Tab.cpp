@@ -1,12 +1,12 @@
 ﻿#include "Tab.h"
 #include "TabControl.h"
 
-Tab::Tab( ) : Parent( nullptr ), TabName( nullptr )
+Tab::Tab( ) : Renderable( ), Parent( nullptr ), TabName( nullptr )
 {
 
 }
 
-Tab::Tab( TabControl* Parent, char* TabName ) : Parent( Parent ), TabName( TabName )
+Tab::Tab( TabControl* Parent, char* TabName ) : Renderable( ), Parent( Parent ), TabName( TabName )
 {
 	Vertex Vertecies[ 4 ]
 	{
@@ -27,6 +27,7 @@ Tab::Tab( TabControl* Parent, char* TabName ) : Parent( Parent ), TabName( TabNa
 
 Tab::~Tab( )
 {
+
 }
 
 float Tab::GetBoundsXStart( )

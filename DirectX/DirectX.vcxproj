@@ -132,6 +132,7 @@
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="EventSystem.h" />
     <ClInclude Include="Form.h" />
+    <ClInclude Include="Groupbox.h" />
     <ClInclude Include="KeyboardEvent.h" />
     <ClInclude Include="KeyEventHandler.h" />
     <ClInclude Include="MouseEvent.h" />
