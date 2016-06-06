@@ -24,12 +24,12 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 		{ X - 1, Y - 1, 1.f, 1.f, TitleBarColor }
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 9 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 9 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	EventSystem::GetSingleton( )->AddOnMouseDownEvent( std::bind( &Form::OnMouseDown, this, std::placeholders::_1, std::placeholders::_2 ) );
@@ -59,12 +59,12 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 		{ X - 1, Y - 1, 1.f, 1.f, 0xFFFFFFFF }
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 11 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 11 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	EventSystem::GetSingleton( )->AddOnMouseDownEvent( std::bind( &Form::OnMouseDown, this, std::placeholders::_1, std::placeholders::_2 ) );
@@ -96,12 +96,12 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 		{ X - 1, Y - 1, 1.f, 1.f, TitleBarColor }
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 13 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 13 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	EventSystem::GetSingleton( )->AddOnMouseDownEvent( std::bind( &Form::OnMouseDown, this, std::placeholders::_1, std::placeholders::_2 ) );
@@ -131,12 +131,12 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 		{ X - 1, Y - 1, 1.f, 1.f, TitleBarColor }
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 11 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 11 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	EventSystem::GetSingleton( )->AddOnMouseDownEvent( std::bind( &Form::OnMouseDown, this, std::placeholders::_1, std::placeholders::_2 ) );
@@ -168,12 +168,12 @@ Form::Form( float X, float Y, float Width, float Height, D3DCOLOR BackgroundColo
 		{ X - 1, Y - 1, 1.f, 1.f, TitleBarColor }
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 13 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 13 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	EventSystem::GetSingleton( )->AddOnMouseDownEvent( std::bind( &Form::OnMouseDown, this, std::placeholders::_1, std::placeholders::_2 ) );
@@ -197,7 +197,7 @@ float Form::GetHeight( ) const
 	return Height;
 }
 
-char* Form::GetTitle( ) const
+const char* Form::GetTitle( ) const
 {
 	return Title;
 }
@@ -276,10 +276,10 @@ void Form::UpdateVertecies( )
 				{ X - 1, Y - 1, 1.f, 1.f, TitleBarColor }
 			};
 
-			void* VertexPointer;
+			void* VertexPointer = nullptr;
 
 			VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-			memcpy( VertexPointer, Vertecies, 13 * sizeof( Vertex ) );
+			memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 			VertexBuffer->Unlock( );
 		}
 		else
@@ -299,10 +299,10 @@ void Form::UpdateVertecies( )
 				{ X - 1, Y - 1, 1.f, 1.f, 0xFFFFFFFF }
 			};
 
-			void* VertexPointer;
+			void* VertexPointer = nullptr;
 
 			VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-			memcpy( VertexPointer, Vertecies, 11 * sizeof( Vertex ) );
+			memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 			VertexBuffer->Unlock( );
 		}
 	}
@@ -321,17 +321,15 @@ void Form::UpdateVertecies( )
 			{ X - 1, Y - 1, 1.f, 1.f, TitleBarColor }
 		};
 
-		void* VertexPointer;
+		void* VertexPointer = nullptr;
 
 		VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-		memcpy( VertexPointer, Vertecies, 9 * sizeof( Vertex ) );
+		memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 		VertexBuffer->Unlock( );
 	}
 
 	for ( auto const &i : Childrens )
-	{
 		i->UpdateVertecies( );
-	}
 }
 
 void Form::RenderObject( )
@@ -358,9 +356,9 @@ void Form::RenderObject( )
 				DirectX::GetSingleton( )->GetDevice( )->DrawPrimitive( D3DPT_LINESTRIP, 6, 4 );
 			}
 
-			RECT Position{ 0, 0, 0, 0 };
+			RECT Position = RECT{ 0, 0, 0, 0 };
 			DirectX::GetSingleton( )->GetVerdana( )->DrawTextA( nullptr, Title, -1, &Position, DT_CALCRECT | DT_NOCLIP, TitleColor );
-			Position = { static_cast<int>( X ) + static_cast<int>( Width ) / 2 - Position.right / 2, static_cast<int>( Y ) + static_cast<int>( TitleBarHeight ) / 2 - Position.bottom / 2, 0, 0 };
+			Position = { static_cast< int >( X ) + static_cast< int >( Width ) / 2 - Position.right / 2, static_cast< int >( Y ) + static_cast< int >( TitleBarHeight ) / 2 - Position.bottom / 2, 0, 0 };
 			DirectX::GetSingleton( )->GetVerdana( )->DrawTextA( nullptr, Title, -1, &Position, DT_LEFT | DT_TOP | DT_NOCLIP, TitleColor );
 		}
 		else
@@ -369,9 +367,7 @@ void Form::RenderObject( )
 		}
 
 		for ( auto const &i : Childrens )
-		{
 			i->RenderObject( );
-		}
 	}
 }
 
@@ -433,12 +429,10 @@ bool Form::OnMouseMove( POINT MousePosition, MouseButton MouseButton )
 				{
 					X = MousePosition.x - ClickedDeltaPosition.x;
 					Y = MousePosition.y - ClickedDeltaPosition.y;
-					UpdateVertecies( );
 					
+					UpdateVertecies( );					
 					for ( auto const &i : Childrens )
-					{
 						i->UpdateVertecies( );
-					}
 
 					return true;
 				}
@@ -450,12 +444,10 @@ bool Form::OnMouseMove( POINT MousePosition, MouseButton MouseButton )
 			{
 				X = MousePosition.x - ClickedDeltaPosition.x;
 				Y = MousePosition.y - ClickedDeltaPosition.y;
-				UpdateVertecies( );
 
+				UpdateVertecies( );
 				for ( auto const &i : Childrens )
-				{
 					i->UpdateVertecies( );
-				}
 
 				return true;
 			}

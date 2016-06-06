@@ -1,6 +1,5 @@
 ﻿#pragma once
-
-typedef unsigned long DWORD;
+#include <Windows.h>
 
 class KeyboardEvent
 {

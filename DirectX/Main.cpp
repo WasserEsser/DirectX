@@ -1,9 +1,12 @@
+#define WIN32_LEAN_AND_MEAN
+
 #include "DirectX.h"
 #include "Form.h"
 #include "Dwmapi.h"
 #include "KeyEventHandler.h"
 #include "MouseEventHandler.h"
 #include "TabControl.h"
+#include "Groupbox.h"
 
 LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 {
@@ -41,7 +44,7 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 
 	App->InitializeDirectX( &Window );
 	
-	Form Menu = Form( 350, 200, 700, 450, D3DCOLOR_ARGB( 255, 25, 33, 35 ), "inVincible", 30.f, D3DCOLOR_ARGB( 255, 33, 41, 43 ), D3DCOLOR_ARGB( 255, 229, 101, 38 ) );
+	Form Menu = Form( 350, 200, 900, 550, D3DCOLOR_ARGB( 255, 25, 33, 35 ), "inVincible", 30.f, D3DCOLOR_ARGB( 255, 33, 41, 43 ), D3DCOLOR_ARGB( 255, 229, 101, 38 ) );
 	App->AddRenderObject( &Menu );
 
 	TabControl TabCtrl = TabControl( &Menu, 150.f, D3DCOLOR_ARGB( 255, 33, 41, 43 ),D3DCOLOR_ARGB( 255, 33, 41, 43 ), 0xFFFFFFFF );
@@ -61,6 +64,9 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 
 	Tab Tab5 = Tab( &TabCtrl, "HUEHUEHUE" );
 	TabCtrl.AddTab( &Tab5 );
+
+	Groupbox Groupbox1 = Groupbox( &Tab1, 25, 25, 300, 200, 1.f, 0xFF838383, "TestBox", 0xFF838383 );
+	Tab1.AddChildren( &Groupbox1 );
 
 	MSG MessageQueue;
 

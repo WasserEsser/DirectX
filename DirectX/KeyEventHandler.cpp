@@ -16,14 +16,15 @@ LRESULT KeyEventHandler::KeyboardHookCallback( int nCode, WPARAM wParam, LPARAM 
 	return CallNextHookEx( GetSingleton( )->HookObject, nCode, wParam, lParam );
 }
 
-KeyEventHandler::KeyEventHandler( ) : HookObject( )
+KeyEventHandler::KeyEventHandler( ) 
+	: HookObject( nullptr )
 {
 
 }
 
 KeyEventHandler::~KeyEventHandler( )
 {
-
+	if ( HookObject != nullptr ) Unhook( );
 }
 
 KeyEventHandler* KeyEventHandler::GetSingleton( )

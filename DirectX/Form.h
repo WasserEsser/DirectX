@@ -10,7 +10,9 @@ class Form : public Renderable, protected KeyboardEvent, protected MouseEvent
 	float Width;
 	float Height;
 
+	
 	D3DCOLOR BackgroundColor;
+
 
 	char* Title;
 
@@ -27,7 +29,7 @@ class Form : public Renderable, protected KeyboardEvent, protected MouseEvent
 	POINT ClickedDeltaPosition;
 
 		
-	std::vector<Renderable*> Childrens;
+	std::vector< Renderable* > Childrens;
 
 
 	Form( );
@@ -65,7 +67,7 @@ public:
 	D3DCOLOR GetBackgroundColor( ) const;
 
 
-	char* GetTitle( ) const;
+	const char* GetTitle( ) const;
 
 
 	bool GetDisplayTitle( ) const;

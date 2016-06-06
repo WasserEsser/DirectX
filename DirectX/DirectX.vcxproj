@@ -146,6 +146,7 @@
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="EventSystem.cpp" />
     <ClCompile Include="Form.cpp" />
+    <ClCompile Include="Groupbox.cpp" />
     <ClCompile Include="KeyboardEvent.cpp" />
     <ClCompile Include="KeyEventHandler.cpp" />
     <ClCompile Include="Main.cpp" />

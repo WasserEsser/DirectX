@@ -73,7 +73,7 @@
     <Filter Include="Header Files\Menu\Components\RadioControl\RadioButton">
       <UniqueIdentifier>{cbb1f2f6-10e5-4d69-a89f-c3931106154b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\EventSystem\Handler\KeyEventHandler\MouseEventHandler">
+    <Filter Include="Header Files\EventSystem\Handler\MouseEventHandler">
       <UniqueIdentifier>{da0f68d1-5d5a-40ee-98d0-5687d9338f0d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -103,7 +103,7 @@
       <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="MouseEventHandler.h">
-      <Filter>Header Files\EventSystem\Handler\KeyEventHandler\MouseEventHandler</Filter>
+      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="TabControl.h">
       <Filter>Header Files\Menu\Components\TabControl</Filter>
@@ -141,13 +141,16 @@
       <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="MouseEventHandler.cpp">
-      <Filter>Header Files\EventSystem\Handler\KeyEventHandler\MouseEventHandler</Filter>
+      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="TabControl.cpp">
       <Filter>Header Files\Menu\Components\TabControl</Filter>
     </ClCompile>
     <ClCompile Include="Tab.cpp">
       <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
+    </ClCompile>
+    <ClCompile Include="Groupbox.cpp">
+      <Filter>Header Files\Menu\Components\Groupbox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

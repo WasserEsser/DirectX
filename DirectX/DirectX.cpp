@@ -1,12 +1,13 @@
 ﻿#include "DirectX.h"
 
-DirectX::DirectX( ) : Interface( nullptr ), Device( nullptr ), Verdana( nullptr ), RenderList( 0 )
+DirectX::DirectX( ) 
+	: Interface( nullptr ), Device( nullptr ), Verdana( nullptr ), RenderList( 0 )
 {
 
 }
 
 DirectX* DirectX::GetSingleton( )
-{
+ {
 	static DirectX Singleton;
 
 	return &Singleton;
@@ -33,7 +34,7 @@ void DirectX::InitializeDirectX( HWND* Window )
 {
 	Interface = Direct3DCreate9( D3D_SDK_VERSION );
 	
-	D3DPRESENT_PARAMETERS PresentParameters{ 0 };
+	D3DPRESENT_PARAMETERS PresentParameters = D3DPRESENT_PARAMETERS{ 0 };
 
 	PresentParameters.BackBufferFormat = D3DFMT_A8R8G8B8;
 	PresentParameters.BackBufferWidth = GetSystemMetrics( SM_CXSCREEN );
@@ -45,20 +46,18 @@ void DirectX::InitializeDirectX( HWND* Window )
 	PresentParameters.AutoDepthStencilFormat = D3DFMT_D16;
 	PresentParameters.EnableAutoDepthStencil = true;
 
-	if ( FAILED( Interface->CreateDevice( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, *Window, D3DCREATE_HARDWARE_VERTEXPROCESSING, &PresentParameters, &Device ) ) ) MessageBox( nullptr, "Failed to create Direct3D device", "inVincible", MB_OK );
+	Interface->CreateDevice( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, *Window, D3DCREATE_HARDWARE_VERTEXPROCESSING, &PresentParameters, &Device );
 
-	D3DXCreateFont( Device, 15, 0, 0, 0, false, DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, "Verdana", &Verdana );
+	D3DXCreateFont( Device, 15, 0, 0, 0, false, DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, "Verdana", &Verdana );
 }
 
-void DirectX::RenderFrame( ) const
+void DirectX::RenderFrame( )
 {
 	Device->Clear( 0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0, 1.f, 0 );
 	Device->BeginScene( );
 
 	for ( auto const &i : RenderList )
-	{
 		i->RenderObject( );
-	}
 
 	Device->EndScene( );
 	Device->Present( nullptr, nullptr, nullptr, nullptr );

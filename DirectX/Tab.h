@@ -10,7 +10,7 @@ class Tab : public Renderable
 
 	char* TabName;
 
-	std::vector<Renderable*> Childrens;
+	std::vector< Renderable* > Childrens;
 
 	
 	Tab( );
@@ -33,7 +33,7 @@ public:
 	float GetBoundsYEnd( ) override;
 
 
-	char* GetTabName( );
+	const char* GetTabName( );
 
 
 	void AddChildren( Renderable* Object );

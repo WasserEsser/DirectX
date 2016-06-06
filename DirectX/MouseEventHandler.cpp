@@ -20,14 +20,15 @@ LRESULT MouseEventHandler::MouseHookCallback( int nCode, WPARAM wParam, LPARAM l
 	return CallNextHookEx( GetSingleton( )->HookObject, nCode, wParam, lParam );
 }
 
-MouseEventHandler::MouseEventHandler( ) : HookObject( )
+MouseEventHandler::MouseEventHandler( ) 
+	: HookObject( nullptr )
 {
 
 }
 
 MouseEventHandler::~MouseEventHandler( )
 {
-
+	if ( HookObject != nullptr ) Unhook( );
 }
 
 MouseEventHandler* MouseEventHandler::GetSingleton( )

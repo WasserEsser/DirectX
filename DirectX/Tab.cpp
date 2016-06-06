@@ -1,12 +1,14 @@
 ﻿#include "Tab.h"
 #include "TabControl.h"
 
-Tab::Tab( ) : Renderable( ), Parent( nullptr ), TabName( nullptr )
+Tab::Tab( ) 
+	: Renderable( ), Parent( nullptr ), TabName( nullptr )
 {
 
 }
 
-Tab::Tab( TabControl* Parent, char* TabName ) : Renderable( ), Parent( Parent ), TabName( TabName )
+Tab::Tab( TabControl* Parent, char* TabName ) 
+	: Renderable( ), Parent( Parent ), TabName( TabName )
 {
 	Vertex Vertecies[ 4 ]
 	{
@@ -16,12 +18,12 @@ Tab::Tab( TabControl* Parent, char* TabName ) : Renderable( ), Parent( Parent ),
 		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) }
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 4 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 4 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 }
 
@@ -50,7 +52,7 @@ float Tab::GetBoundsYEnd( )
 	return Parent->GetBoundsYEnd( );
 }
 
-char* Tab::GetTabName( )
+const char* Tab::GetTabName( )
 {
 	return TabName;
 }
@@ -71,16 +73,14 @@ void Tab::UpdateVertecies( )
 		{ Parent->GetBoundsXEnd( ), Parent->GetBoundsYEnd( ), 1.f, 1.f, Parent->GetTabBackgroundColor( ) }
 	};
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 4 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	for ( auto const &i : Childrens )
-	{
 		i->UpdateVertecies( );
-	}
 }
 
 void Tab::RenderObject( )
@@ -91,7 +91,5 @@ void Tab::RenderObject( )
 	DirectX::GetSingleton( )->GetDevice( )->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 2 );
 
 	for ( auto const &i : Childrens )
-	{
 		i->RenderObject( );
-	}
 }

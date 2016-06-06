@@ -41,7 +41,7 @@ public:
 
 	void InitializeDirectX( HWND* Window );
 
-	void RenderFrame( ) const;
+	void RenderFrame( );
 
 	void AddRenderObject( Renderable* Object );
 };

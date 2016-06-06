@@ -19,7 +19,7 @@ class TabControl : public Renderable, protected MouseEvent
 	BYTE ActiveTab;
 
 
-	std::vector<Tab*> Tabs;
+	std::vector< Tab* > Tabs;
 	
 
 	TabControl( );
@@ -35,7 +35,7 @@ public:
 	void AddTab( Tab* Object );
 
 
-	Form* GetParent( );
+	const Form* GetParent( );
 
 
 	float GetTabControlWidth( );

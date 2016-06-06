@@ -1,11 +1,13 @@
 ﻿#include "TabControl.h"
 
-TabControl::TabControl( ) : Renderable( ), MouseEvent( ), Parent( nullptr ), TabControlWidth( 0.f ), BackgroundColor( 0 ), TabBackgroundColor( 0 ), SelectedTabColor( 0 ), TextColor( 0 ), ActiveTab( 0 ), Tabs( )
+TabControl::TabControl( ) 
+	: Renderable( ), MouseEvent( ), Parent( nullptr ), TabControlWidth( 0.f ), BackgroundColor( 0 ), TabBackgroundColor( 0 ), SelectedTabColor( 0 ), TextColor( 0 ), ActiveTab( 0 ), Tabs( )
 {
 
 }
 
-TabControl::TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgroundColor, D3DCOLOR SelectedTabColor, D3DCOLOR TextColor ) : Renderable( ), MouseEvent( ), Parent( Parent ), TabControlWidth( TabControlWidth ), BackgroundColor( this->Parent->GetBackgroundColor( ) ), TabBackgroundColor( TabBackgroundColor ), SelectedTabColor( SelectedTabColor ), TextColor( TextColor ), ActiveTab( 3 ), Tabs( )
+TabControl::TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgroundColor, D3DCOLOR SelectedTabColor, D3DCOLOR TextColor ) 
+	: Renderable( ), MouseEvent( ), Parent( Parent ), TabControlWidth( TabControlWidth ), BackgroundColor( this->Parent->GetBackgroundColor( ) ), TabBackgroundColor( TabBackgroundColor ), SelectedTabColor( SelectedTabColor ), TextColor( TextColor ), ActiveTab( 1 ), Tabs( )
 {
 	X = this->Parent->GetBoundsXStart( );
 	Y = this->Parent->GetBoundsYStart( );
@@ -22,12 +24,12 @@ TabControl::TabControl( Form* Parent, float TabControlWidth, D3DCOLOR TabBackgro
 		{ X + TabControlWidth + 1, Y + 35 * ( ActiveTab - 1 ) + 35 + ActiveTab * 15, 1.f, 1.f, SelectedTabColor },
 	};
 
-	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( 8 * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
+	DirectX::GetSingleton( )->GetDevice( )->CreateVertexBuffer( std::size( Vertecies ) * sizeof( Vertex ), 0, FVF, D3DPOOL_MANAGED, &VertexBuffer, nullptr );
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 8 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	EventSystem::GetSingleton( )->AddOnMouseDownEvent( std::bind( &TabControl::OnMouseDown, this, std::placeholders::_1, std::placeholders::_2 ) );
@@ -46,7 +48,7 @@ void TabControl::AddTab( Tab* Object )
 	Tabs[ 0 ]->SetActive( true );
 }
 
-Form* TabControl::GetParent( )
+const Form* TabControl::GetParent( )
 {
 	return Parent;
 }
@@ -119,15 +121,12 @@ void TabControl::RenderObject( )
 	{
 		RECT Position{ 0, 0, 0, 0 };
 		DirectX::GetSingleton( )->GetVerdana( )->DrawTextA( nullptr, Tabs[i]->GetTabName( ), -1, &Position, DT_CALCRECT | DT_NOCLIP, TextColor );
-		Position = { static_cast<int>( this->Parent->GetBoundsXStart( ) ) + static_cast<int>( TabControlWidth ) / 2 - Position.right / 2, static_cast<int>( this->Parent->GetBoundsYStart( ) ) + 15 * static_cast<int>( i + 1 ) + 35 * static_cast<int>( i ) + 17 - Position.bottom / 2, 0, 0 };
+		Position = { static_cast< int >( this->Parent->GetBoundsXStart( ) ) + static_cast< int >( TabControlWidth ) / 2 - Position.right / 2, static_cast< int >( this->Parent->GetBoundsYStart( ) + 15 * ( i + 1 ) + 35 * i ) + 17 - Position.bottom / 2, 0, 0 };
 		DirectX::GetSingleton( )->GetVerdana( )->DrawTextA( nullptr, Tabs[i]->GetTabName( ), -1, &Position, DT_LEFT | DT_TOP | DT_NOCLIP, TextColor );
 	}
 
 	for ( auto const &i : Tabs )
-	{
-		if ( i->GetActive( ) )
-			i->RenderObject( );
-	}
+		if ( i->GetActive( ) ) i->RenderObject( );
 }
 
 void TabControl::UpdateVertecies( )
@@ -144,16 +143,14 @@ void TabControl::UpdateVertecies( )
 		{ this->Parent->GetBoundsXStart( ) + TabControlWidth + 1, this->Parent->GetBoundsYStart( ) + 35 * ( ActiveTab - 1 ) + 35 + ActiveTab * 15, 1.f, 1.f, SelectedTabColor },
 	};
 
-	void* VertexPointer;
+	void* VertexPointer = nullptr;
 
 	VertexBuffer->Lock( 0, 0, &VertexPointer, 0 );
-	memcpy( VertexPointer, Vertecies, 8 * sizeof( Vertex ) );
+	memcpy( VertexPointer, Vertecies, std::size( Vertecies ) * sizeof( Vertex ) );
 	VertexBuffer->Unlock( );
 
 	for ( auto const &i : Tabs )
-	{
 		i->UpdateVertecies( );
-	}
 }
 
 bool TabControl::OnMouseDown( POINT MousePosition, MouseButton Button )
@@ -162,7 +159,8 @@ bool TabControl::OnMouseDown( POINT MousePosition, MouseButton Button )
 	{
 		for ( unsigned int i = 0; i < Tabs.size( ); i++ )
 		{
-			if ( MousePosition.x >= this->Parent->GetBoundsXStart( ) && MousePosition.x <= this->Parent->GetBoundsXStart( ) + TabControlWidth && MousePosition.y >= this->Parent->GetBoundsYStart( ) + 15 * ( i + 1 ) + 35 * i && MousePosition.y <= this->Parent->GetBoundsYStart( ) + 15 * ( i + 1 ) + 35 * i + 35 )
+			if ( MousePosition.x >= this->Parent->GetBoundsXStart( ) && MousePosition.x <= this->Parent->GetBoundsXStart( ) + TabControlWidth && 
+				 MousePosition.y >= this->Parent->GetBoundsYStart( ) + 15 * ( i + 1 ) + 35 * i && MousePosition.y <= this->Parent->GetBoundsYStart( ) + 15 * ( i + 1 ) + 35 * i + 35 )
 			{
 				Tabs[ i ]->SetActive( true );
 				ActiveTab = i + 1;
