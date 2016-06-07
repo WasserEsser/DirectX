@@ -5,10 +5,10 @@
 
 enum class MouseButton
 {
-	MOUSE_NONE = 0x0,
-	MOUSE_MOVE = 0x200,
-	MOUSE_LEFT = 0x201,
-	MOUSE_RIGHT = 0x204
+	MOUSE_NONE,
+	MOUSE_MOVE,
+	MOUSE_LEFT ,
+	MOUSE_RIGHT
 };
 
 class EventSystem
