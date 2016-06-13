@@ -129,32 +129,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DirectX.h" />
-    <ClInclude Include="EventSystem.h" />
-    <ClInclude Include="Form.h" />
-    <ClInclude Include="Groupbox.h" />
-    <ClInclude Include="KeyboardEvent.h" />
-    <ClInclude Include="KeyEventHandler.h" />
-    <ClInclude Include="MouseEvent.h" />
-    <ClInclude Include="MouseEventHandler.h" />
-    <ClInclude Include="Renderable.h" />
-    <ClInclude Include="Tab.h" />
-    <ClInclude Include="TabControl.h" />
+    <ClInclude Include="Menu\Components\Checkbox\Checkbox.h" />
+    <ClInclude Include="DirectX\DirectX.h" />
+    <ClInclude Include="EventSystem\EventSystem.h" />
+    <ClInclude Include="Menu\Form\Form.h" />
+    <ClInclude Include="Menu\Components\Groupbox\Groupbox.h" />
+    <ClInclude Include="EventSystem\Events\KeyboardEvents\KeyboardEvent.h" />
+    <ClInclude Include="EventSystem\Events\MouseEvents\MouseEvent.h" />
+    <ClInclude Include="Menu\Renderable\Renderable.h" />
+    <ClInclude Include="Menu\Components\TabControl\Tab\Tab.h" />
+    <ClInclude Include="Menu\Components\TabControl\TabControl.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DirectX.cpp" />
-    <ClCompile Include="EventSystem.cpp" />
-    <ClCompile Include="Form.cpp" />
-    <ClCompile Include="Groupbox.cpp" />
-    <ClCompile Include="KeyboardEvent.cpp" />
-    <ClCompile Include="KeyEventHandler.cpp" />
+    <ClCompile Include="DirectX\DirectX.cpp" />
+    <ClCompile Include="EventSystem\EventSystem.cpp" />
+    <ClCompile Include="Menu\Form\Form.cpp" />
+    <ClCompile Include="Menu\Components\Groupbox\Groupbox.cpp" />
+    <ClCompile Include="EventSystem\Events\KeyboardEvents\KeyboardEvent.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MouseEvent.cpp" />
-    <ClCompile Include="MouseEventHandler.cpp" />
-    <ClCompile Include="Renderable.cpp" />
-    <ClCompile Include="Tab.cpp" />
-    <ClCompile Include="TabControl.cpp" />
+    <ClCompile Include="EventSystem\Events\MouseEvents\MouseEvent.cpp" />
+    <ClCompile Include="Menu\Renderable\Renderable.cpp" />
+    <ClCompile Include="Menu\Components\TabControl\Tab\Tab.cpp" />
+    <ClCompile Include="Menu\Components\TabControl\TabControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

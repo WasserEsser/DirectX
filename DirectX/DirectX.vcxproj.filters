@@ -37,12 +37,6 @@
     <Filter Include="Header Files\EventSystem\Events\KeyboardEvent">
       <UniqueIdentifier>{560bc1a8-b8b5-44f8-9cb9-f404b7ff6fcd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\EventSystem\Handler">
-      <UniqueIdentifier>{fa085344-bf55-4363-a24a-7f9224f4f973}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\EventSystem\Handler\KeyEventHandler">
-      <UniqueIdentifier>{15661165-e1ab-4689-9a7d-4c71b8d21de1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Menu\Components">
       <UniqueIdentifier>{fd65a1ac-159f-4e6e-8a31-8ea49176dd08}</UniqueIdentifier>
     </Filter>
@@ -73,84 +67,72 @@
     <Filter Include="Header Files\Menu\Components\RadioControl\RadioButton">
       <UniqueIdentifier>{cbb1f2f6-10e5-4d69-a89f-c3931106154b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\EventSystem\Handler\MouseEventHandler">
-      <UniqueIdentifier>{da0f68d1-5d5a-40ee-98d0-5687d9338f0d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectX.h">
-      <Filter>Header Files\DirectX</Filter>
-    </ClInclude>
-    <ClInclude Include="Form.h">
-      <Filter>Header Files\Menu\Form</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderable.h">
-      <Filter>Header Files\Menu\Renderable</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MouseEvent.h">
-      <Filter>Header Files\EventSystem\Events\MouseEvent</Filter>
+    <ClInclude Include="DirectX\DirectX.h">
+      <Filter>Header Files\DirectX</Filter>
     </ClInclude>
-    <ClInclude Include="KeyboardEvent.h">
-      <Filter>Header Files\EventSystem\Events\KeyboardEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="EventSystem.h">
+    <ClInclude Include="EventSystem\EventSystem.h">
       <Filter>Header Files\EventSystem</Filter>
     </ClInclude>
-    <ClInclude Include="KeyEventHandler.h">
-      <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
+    <ClInclude Include="EventSystem\Events\KeyboardEvents\KeyboardEvent.h">
+      <Filter>Header Files\EventSystem\Events\KeyboardEvent</Filter>
     </ClInclude>
-    <ClInclude Include="MouseEventHandler.h">
-      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
+    <ClInclude Include="EventSystem\Events\MouseEvents\MouseEvent.h">
+      <Filter>Header Files\EventSystem\Events\MouseEvent</Filter>
     </ClInclude>
-    <ClInclude Include="TabControl.h">
-      <Filter>Header Files\Menu\Components\TabControl</Filter>
+    <ClInclude Include="Menu\Components\Checkbox\Checkbox.h">
+      <Filter>Header Files\Menu\Components\Checkbox</Filter>
     </ClInclude>
-    <ClInclude Include="Tab.h">
+    <ClInclude Include="Menu\Form\Form.h">
+      <Filter>Header Files\Menu\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\Components\Groupbox\Groupbox.h">
+      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\Renderable\Renderable.h">
+      <Filter>Header Files\Menu\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\Components\TabControl\Tab\Tab.h">
       <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
     </ClInclude>
-    <ClInclude Include="Groupbox.h">
-      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    <ClInclude Include="Menu\Components\TabControl\TabControl.h">
+      <Filter>Header Files\Menu\Components\TabControl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DirectX.cpp">
+    <ClCompile Include="DirectX\DirectX.cpp">
       <Filter>Header Files\DirectX</Filter>
     </ClCompile>
-    <ClCompile Include="Form.cpp">
-      <Filter>Header Files\Menu\Form</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderable.cpp">
-      <Filter>Header Files\Menu\Renderable</Filter>
-    </ClCompile>
-    <ClCompile Include="MouseEvent.cpp">
-      <Filter>Header Files\EventSystem\Events\MouseEvent</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyboardEvent.cpp">
-      <Filter>Header Files\EventSystem\Events\KeyboardEvent</Filter>
-    </ClCompile>
-    <ClCompile Include="EventSystem.cpp">
+    <ClCompile Include="EventSystem\EventSystem.cpp">
       <Filter>Header Files\EventSystem</Filter>
     </ClCompile>
-    <ClCompile Include="KeyEventHandler.cpp">
-      <Filter>Header Files\EventSystem\Handler\KeyEventHandler</Filter>
+    <ClCompile Include="EventSystem\Events\KeyboardEvents\KeyboardEvent.cpp">
+      <Filter>Header Files\EventSystem\Events\KeyboardEvent</Filter>
     </ClCompile>
-    <ClCompile Include="MouseEventHandler.cpp">
-      <Filter>Header Files\EventSystem\Handler\MouseEventHandler</Filter>
+    <ClCompile Include="EventSystem\Events\MouseEvents\MouseEvent.cpp">
+      <Filter>Header Files\EventSystem\Events\MouseEvent</Filter>
     </ClCompile>
-    <ClCompile Include="TabControl.cpp">
-      <Filter>Header Files\Menu\Components\TabControl</Filter>
+    <ClCompile Include="Menu\Form\Form.cpp">
+      <Filter>Header Files\Menu\Form</Filter>
     </ClCompile>
-    <ClCompile Include="Tab.cpp">
+    <ClCompile Include="Menu\Components\Groupbox\Groupbox.cpp">
+      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\Renderable\Renderable.cpp">
+      <Filter>Header Files\Menu\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\Components\TabControl\Tab\Tab.cpp">
       <Filter>Header Files\Menu\Components\TabControl\Tab</Filter>
     </ClCompile>
-    <ClCompile Include="Groupbox.cpp">
-      <Filter>Header Files\Menu\Components\Groupbox</Filter>
+    <ClCompile Include="Menu\Components\TabControl\TabControl.cpp">
+      <Filter>Header Files\Menu\Components\TabControl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

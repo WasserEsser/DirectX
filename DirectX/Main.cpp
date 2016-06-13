@@ -1,21 +1,17 @@
 #define WIN32_LEAN_AND_MEAN
 
-#include "DirectX.h"
-#include "Form.h"
-#include "Dwmapi.h"
-#include "KeyEventHandler.h"
-#include "MouseEventHandler.h"
-#include "TabControl.h"
-#include "Groupbox.h"
+#include <Windowsx.h>
+#include <Dwmapi.h>
+#include "DirectX/DirectX.h"
+#include "Menu/Form/Form.h"
+#include "Menu/Components/TabControl/TabControl.h"
+#include "Menu/Components/Groupbox/Groupbox.h"
 
 LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 {
-	switch ( msg )
-	{
-		case WM_DESTROY:
-			PostQuitMessage( 0 );
-	}
-
+	if ( msg == WM_DESTROY )
+		PostQuitMessage( 0 );
+	
 	return DefWindowProc( hwnd, msg, wParam, lParam );
 }
 
@@ -34,12 +30,12 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 
 	RegisterClassEx( &WindowClass );
 
-	auto Window = CreateWindowEx( WS_EX_TOPMOST | WS_EX_TRANSPARENT | WS_EX_LAYERED, "inVincibleClass", "inVincible", WS_POPUP, 0, 0, GetSystemMetrics( SM_CXSCREEN ), GetSystemMetrics( SM_CYSCREEN ), nullptr, nullptr, Instance, nullptr );
+	auto Window = CreateWindowEx( WS_EX_TOPMOST | WS_EX_LAYERED, "inVincibleClass", "inVincible", WS_POPUP, 0, 0, GetSystemMetrics( SM_CXSCREEN ), GetSystemMetrics( SM_CYSCREEN ), nullptr, nullptr, Instance, nullptr );
 	SetLayeredWindowAttributes( Window, D3DCOLOR_XRGB( 0, 0, 0 ), 255, ULW_COLORKEY | LWA_ALPHA );
 
 	UpdateWindow( Window );
 	ShowWindow( Window, SW_SHOW );
-
+	
 	DirectX* App = DirectX::GetSingleton( );
 
 	App->InitializeDirectX( &Window );
@@ -70,9 +66,6 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 
 	MSG MessageQueue;
 
-	KeyEventHandler::GetSingleton( )->Hook( );
-	MouseEventHandler::GetSingleton( )->Hook( );
-
 	while ( 1 )
 	{
 		SetWindowPos( Window, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE );
@@ -91,9 +84,6 @@ int WINAPI WinMain( HINSTANCE Instance, HINSTANCE PreviousInstance, char* lpCmdL
 		MARGINS Margin{ 0, 0, 1920, 1080 };
 		DwmExtendFrameIntoClientArea( Window, &Margin );
 	}
-
-	KeyEventHandler::GetSingleton( )->Unhook( );
-	MouseEventHandler::GetSingleton( )->Unhook( );
 
 	return EXIT_SUCCESS;
 }
